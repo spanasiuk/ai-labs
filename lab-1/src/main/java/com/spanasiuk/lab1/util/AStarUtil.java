@@ -49,7 +49,7 @@ public abstract class AStarUtil<T> {
       activeNodes.addAll(nextNodes);
     }
     System.err.println("There's no solution");
-    return null;
+    return new ArrayList<>();
   }
 
   protected abstract int getHeuristic(Node<T> currentNode, Node<T> endNode);
