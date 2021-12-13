@@ -1,6 +1,6 @@
-package com.spanasiuk.lab1;
+package com.spanasiuk.lab2;
 
-public class Application {
+public class Lab2Application {
 
   //Startpoint
   public static void main(String[] args) {

@@ -3,12 +3,10 @@ package com.spanasiuk.lab1;
 import com.spanasiuk.lab1.model.Node;
 import com.spanasiuk.lab1.model.impl.IntArrayNode;
 import com.spanasiuk.lab1.util.impl.AStarIntArrayUtil;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.TreeSet;
 
-public class Application {
+public class Lab1Application {
 
   //Startpoint
   public static void main(String[] args) {
