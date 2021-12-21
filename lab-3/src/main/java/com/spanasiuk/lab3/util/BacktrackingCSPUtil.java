@@ -64,16 +64,12 @@ public final class BacktrackingCSPUtil {
     java.util.StringTokenizer st = new java.util.StringTokenizer(q, "*/+-", true);
     while (st.hasMoreTokens()) {
       String next = st.nextToken().trim();
-      if (next.equals("+")) {
-        val += Integer.parseInt(st.nextToken().trim());
-      } else if (next.equals("-")) {
-        val -= Integer.parseInt(st.nextToken().trim());
-      } else if (next.equals("*")) {
-        val *= Integer.parseInt(st.nextToken().trim());
-      } else if (next.equals("/")) {
-        val /= Integer.parseInt(st.nextToken().trim());
-      } else {
-        val = Integer.parseInt(next);
+      switch (next) {
+        case "+" -> val += Integer.parseInt(st.nextToken().trim());
+        case "-" -> val -= Integer.parseInt(st.nextToken().trim());
+        case "*" -> val *= Integer.parseInt(st.nextToken().trim());
+        case "/" -> val /= Integer.parseInt(st.nextToken().trim());
+        default -> val = Integer.parseInt(next);
       }
     }
     return val;
