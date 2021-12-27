@@ -38,16 +38,16 @@ limited_depth_search(V1, V2, R1, R2, L, I, P) :-
   join_str(P, ';-B2', P20),
 
   %All possible shuffles
-  (main(V1, V2, R1_12, R2_12, L, J, P12);
-  main(V1, V2, R1_21, R2_21, L, J, P21);
-  main(V1, V2, V1, R2, L, J, P11);
-  main(V1, V2, R1, V2, L, J, P22);
-  main(V1, V2, 0, R2, L, J, P10);
-  main(V1, V2, R1, 0, L, J, P20)).
+  (limited_depth_search(V1, V2, R1_12, R2_12, L, J, P12);
+  limited_depth_search(V1, V2, R1_21, R2_21, L, J, P21);
+  limited_depth_search(V1, V2, V1, R2, L, J, P11);
+  limited_depth_search(V1, V2, R1, V2, L, J, P22);
+  limited_depth_search(V1, V2, 0, R2, L, J, P10);
+  limited_depth_search(V1, V2, R1, 0, L, J, P20)).
 
 %Entrypoint
 %First volume, Second volume, Max depth
 main(V1, V2, L) :-
   I is 0,
-  (main(V1, V2, V1, 0, L, I, '+B1');
-  main(V1, V2, 0, V2, L, I, '+B2')).
+  (limited_depth_search(V1, V2, V1, 0, L, I, '+B1');
+  limited_depth_search(V1, V2, 0, V2, L, I, '+B2')).
