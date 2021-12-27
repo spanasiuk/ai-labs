@@ -38,8 +38,7 @@
   (retract ?c)
 
   (if (= (length$ (find-all-facts ((?f state)) (<= ?f:d ?gd))) 0) then
-    (modify ?dd (v (+ ?gd 1)))
-    (printout t "Switching to depth " ?gd crlf))
+    (modify ?dd (v (+ ?gd 1))))
 
   (bind ?f1 (- ?v1 ?r1))
   (bind ?f2 (- ?v2 ?r2))
